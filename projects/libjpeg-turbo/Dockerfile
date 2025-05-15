@@ -19,7 +19,7 @@ FROM gcr.io/oss-fuzz-base/base-builder
 RUN apt-get update && apt-get install -y make yasm cmake
 RUN git clone --depth 1 https://github.com/libjpeg-turbo/fuzz && \
     cat fuzz/branches.txt | while read branch; do \
-      git clone --depth 1 https://github.com/libjpeg-turbo/libjpeg-turbo -b $branch libjpeg-turbo.$branch; \
+      git clone --depth 1 https://github.com/hanelmouta/libjpeg-turbo.git -b $branch libjpeg-turbo.$branch; \
     done
 
 RUN git clone --depth 1 https://github.com/libjpeg-turbo/seed-corpora
